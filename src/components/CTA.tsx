@@ -54,13 +54,13 @@ export default function CTA() {
           }}
         >
           <div
-            className="absolute right-[5%] -top-[30%] w-[260px] h-[500px] border border-[rgba(188,232,236,.26)] rotate-[24deg] rounded-[14px]"
-            style={{ background: 'rgba(196,233,236,.05)' }}
+            className="absolute right-[5%] -top-[30%] w-[260px] h-[500px] border border-[rgba(192,221,252,.26)] rotate-[24deg] rounded-[14px]"
+            style={{ background: 'rgba(192,221,252,.05)' }}
           />
 
           <div className="grid grid-cols-[.85fr_1.15fr] gap-[74px] items-start relative z-[2] max-[820px]:grid-cols-1">
             <div data-reveal>
-              <div className="eyebrow text-[#A8DADF]">ЗАПОЧНЕТЕ ОТ ТУК</div>
+              <div className="eyebrow text-[#82BBF8]">ЗАПОЧНЕТЕ ОТ ТУК</div>
               <h2 className="h2-display text-white">
                 Имате място.
                 <br />
@@ -109,7 +109,7 @@ export default function CTA() {
                     type="text"
                     placeholder="Вашето име"
                     required
-                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)]"
+                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(46,141,244,.10)]"
                   />
                 </div>
                 <div className="flex flex-col gap-[7px]">
@@ -122,7 +122,7 @@ export default function CTA() {
                     type="tel"
                     placeholder="+359..."
                     required
-                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)]"
+                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(46,141,244,.10)]"
                   />
                 </div>
                 <div className="flex flex-col gap-[7px]">
@@ -132,7 +132,7 @@ export default function CTA() {
                   <select
                     id="project"
                     name="project"
-                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)]"
+                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(46,141,244,.10)]"
                   >
                     {PROJECT_TYPES.map((t) => (
                       <option key={t}>{t}</option>
@@ -148,7 +148,7 @@ export default function CTA() {
                     name="size"
                     type="text"
                     placeholder="напр. 120 × 90 × 200 cm"
-                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)]"
+                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(46,141,244,.10)]"
                   />
                 </div>
                 <div className="flex flex-col gap-[7px] col-span-full">
@@ -159,7 +159,7 @@ export default function CTA() {
                     id="message"
                     name="message"
                     placeholder="Какво искате да реализирате?"
-                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)] min-h-[88px] resize-y"
+                    className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(46,141,244,.10)] min-h-[88px] resize-y"
                   />
                 </div>
               </div>

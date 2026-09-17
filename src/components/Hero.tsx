@@ -11,7 +11,7 @@ export default function Hero() {
       className="min-h-[100svh] pt-[152px] pb-[76px] relative flex items-center overflow-hidden"
       style={{
         background:
-          'radial-gradient(circle at 80% 18%, rgba(157,219,226,.28), transparent 25%), linear-gradient(180deg,#F9FBFC 0%,#FFFFFF 78%)',
+          'radial-gradient(circle at 80% 18%, rgba(192,221,252,.28), transparent 25%), linear-gradient(180deg,#F9FBFC 0%,#FFFFFF 78%)',
       }}
     >
       <div
@@ -19,7 +19,7 @@ export default function Hero() {
         style={{
           width: '45vw',
           height: '45vw',
-          border: '1px solid rgba(92,157,166,.16)',
+          border: '1px solid rgba(46,141,244,.16)',
           right: '-15vw',
           top: '-13vw',
         }}
@@ -68,7 +68,7 @@ export default function Hero() {
                 <span
                   className="w-8 h-8 rounded-full grid place-items-center max-[560px]:w-[27px] max-[560px]:h-[27px]"
                   style={{
-                    background: 'rgba(121,187,196,.14)',
+                    background: 'rgba(46,141,244,.14)',
                     color: 'var(--glass-deep)',
                   }}
                 >
@@ -89,7 +89,7 @@ export default function Hero() {
             className="absolute inset-0 left-9 rounded-[34px] overflow-hidden max-[820px]:left-0 max-[560px]:rounded-[25px]"
             style={{
               boxShadow: 'var(--shadow)',
-              background: 'linear-gradient(145deg,#dcebed,#8fbec4 52%,#25373d)',
+              background: 'linear-gradient(145deg,#dce8fb,#6fa8ec 52%,#25373d)',
             }}
           >
             <img
@@ -111,17 +111,17 @@ export default function Hero() {
             aria-hidden="true"
           >
             {[
-              'right:0;top:0;background:rgba(179,228,233,.27)',
-              'right:18px;top:14px;background:rgba(110,192,201,.19)',
-              'right:36px;top:28px;background:rgba(183,206,209,.22)',
-              'right:54px;top:42px;background:rgba(103,163,170,.13)',
-              'right:72px;top:56px;background:rgba(229,239,241,.28)',
+              'right:0;top:0;background:rgba(179,213,248,.27)',
+              'right:18px;top:14px;background:rgba(140,190,240,.19)',
+              'right:36px;top:28px;background:rgba(180,205,240,.22)',
+              'right:54px;top:42px;background:rgba(120,165,225,.13)',
+              'right:72px;top:56px;background:rgba(232,240,252,.28)',
             ].map((style, i) => (
               <span
                 key={i}
                 className="absolute w-[76px] h-[220px] rounded-[7px] border border-[rgba(255,255,255,.62)]"
                 style={{
-                  boxShadow: '0 16px 30px rgba(28,88,99,.12), inset 0 0 18px rgba(255,255,255,.4)',
+                  boxShadow: '0 16px 30px rgba(2,40,90,.12), inset 0 0 18px rgba(255,255,255,.4)',
                   backdropFilter: 'blur(3px)',
                   ...(style.split(';').reduce((acc, prop) => {
                     const [k, v] = prop.split(':').map((s) => s.trim());
@@ -137,11 +137,11 @@ export default function Hero() {
           <div
             className="absolute left-[-22px] bottom-11 z-[4] w-[180px] h-[180px] rounded-full grid place-items-center text-center p-[30px] max-[820px]:left-[-4px] max-[820px]:bottom-6 max-[820px]:w-[145px] max-[820px]:h-[145px] max-[820px]:p-[22px] max-[560px]:w-[125px] max-[560px]:h-[125px]"
             style={{
-              background: 'rgba(238,249,250,.76)',
+              background: 'rgba(235,242,252,.76)',
               backdropFilter: 'blur(18px)',
               WebkitBackdropFilter: 'blur(18px)',
               border: '1px solid rgba(255,255,255,.56)',
-              boxShadow: '0 20px 50px rgba(15,52,62,.16)',
+              boxShadow: '0 20px 50px rgba(10,40,90,.16)',
               animation: 'float 5s ease-in-out infinite',
             }}
           >

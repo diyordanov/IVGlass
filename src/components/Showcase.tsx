@@ -87,7 +87,7 @@ export default function Showcase() {
         style={{
           width: 480,
           height: 480,
-          background: 'rgba(90,180,192,.12)',
+          background: 'rgba(46,141,244,.12)',
           filter: 'blur(90px)',
           top: '20%',
           right: '-150px',
@@ -96,7 +96,7 @@ export default function Showcase() {
       <div className="container relative">
         <div className="section-head">
           <div>
-            <div className="eyebrow text-[#A6D9DF]" data-reveal>ДУШ КАБИНИ И ПРЕГРАДИ</div>
+            <div className="eyebrow text-[#82BBF8]" data-reveal>ДУШ КАБИНИ И ПРЕГРАДИ</div>
             <h2 className="h2-display text-white" data-reveal>
               Бутикова баня.
               <br />
@@ -134,8 +134,8 @@ export default function Showcase() {
               <div
                 className="absolute left-[10px] top-0 bottom-0 w-0.5"
                 style={{
-                  background: 'linear-gradient(transparent,rgba(113,213,224,.9),transparent)',
-                  boxShadow: '0 0 16px rgba(113,213,224,.55)',
+                  background: 'linear-gradient(transparent,rgba(46,141,244,.9),transparent)',
+                  boxShadow: '0 0 16px rgba(46,141,244,.55)',
                 }}
               />
             </div>
@@ -148,7 +148,7 @@ export default function Showcase() {
                 padding: '14px 16px',
               }}
             >
-              <span className="block text-[9px] uppercase tracking-[.14em] text-[#93C9CF] font-extrabold">
+              <span className="block text-[9px] uppercase tracking-[.14em] text-[#82BBF8] font-extrabold">
                 Избрано стъкло
               </span>
               <strong className="text-[13px]">{opt.name}</strong>
@@ -167,8 +167,8 @@ export default function Showcase() {
                   onClick={() => setActive(i)}
                   className={`rounded-[16px] px-3.5 py-[15px] flex items-center gap-3 text-left transition-all duration-300 ${
                     i === active
-                      ? 'bg-[rgba(151,213,220,.12)] border-[rgba(151,213,220,.36)] text-white -translate-y-0.5'
-                      : 'bg-[rgba(255,255,255,.045)] border-[rgba(255,255,255,.11)] text-[rgba(255,255,255,.72)] hover:bg-[rgba(151,213,220,.12)] hover:border-[rgba(151,213,220,.36)] hover:text-white hover:-translate-y-0.5'
+                      ? 'bg-[rgba(46,141,244,.12)] border-[rgba(46,141,244,.36)] text-white -translate-y-0.5'
+                      : 'bg-[rgba(255,255,255,.045)] border-[rgba(255,255,255,.11)] text-[rgba(255,255,255,.72)] hover:bg-[rgba(46,141,244,.12)] hover:border-[rgba(46,141,244,.36)] hover:text-white hover:-translate-y-0.5'
                   }`}
                   style={{ transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)' }}
                 >
@@ -187,7 +187,7 @@ export default function Showcase() {
               ))}
             </div>
 
-            <div className="border-l border-[#7FC4CC] pl-[18px] text-[12px] leading-[1.7] text-[rgba(255,255,255,.52)]">
+            <div className="border-l border-[#2E8DF4] pl-[18px] text-[12px] leading-[1.7] text-[rgba(255,255,255,.52)]">
               Всички стъкла по поръчка се изпълняват като закалени стъкла
               в съответствие с приложимите стандарти за безопасност.
             </div>

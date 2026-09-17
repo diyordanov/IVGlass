@@ -1,15 +1,15 @@
 const SLABS = [
-  { transform: 'translate(-78%,-56%) rotateY(43deg) translateZ(-70px)', bg: 'rgba(194,230,233,.27)' },
-  { transform: 'translate(-64%,-53%) rotateY(35deg) translateZ(-35px)', bg: 'rgba(115,192,199,.19)' },
-  { transform: 'translate(-50%,-50%) rotateY(27deg)', bg: 'rgba(235,247,248,.29)' },
-  { transform: 'translate(-36%,-47%) rotateY(20deg) translateZ(35px)', bg: 'rgba(105,150,154,.14)' },
-  { transform: 'translate(-22%,-44%) rotateY(12deg) translateZ(70px)', bg: 'rgba(205,220,218,.22)' },
+  { transform: 'translate(-78%,-56%) rotateY(43deg) translateZ(-70px)', bg: 'rgba(192,221,252,.27)' },
+  { transform: 'translate(-64%,-53%) rotateY(35deg) translateZ(-35px)', bg: 'rgba(60,150,240,.19)' },
+  { transform: 'translate(-50%,-50%) rotateY(27deg)', bg: 'rgba(232,240,252,.29)' },
+  { transform: 'translate(-36%,-47%) rotateY(20deg) translateZ(35px)', bg: 'rgba(40,110,200,.14)' },
+  { transform: 'translate(-22%,-44%) rotateY(12deg) translateZ(70px)', bg: 'rgba(200,220,245,.22)' },
 ];
 
 const LIST_ITEMS = [
-  { color: 'rgba(220,248,249,.8)', title: 'Прецизно заснемане', sub: 'по реалния обект' },
-  { color: 'rgba(160,218,224,.65)', title: 'Индивидуално проектиране', sub: 'размер · форма · обков' },
-  { color: 'rgba(92,143,150,.50)', title: 'Професионален монтаж', sub: 'точен · чист · завършен' },
+  { color: 'rgba(200,225,252,.8)', title: 'Прецизно заснемане', sub: 'по реалния обект' },
+  { color: 'rgba(100,170,245,.65)', title: 'Индивидуално проектиране', sub: 'размер · форма · обков' },
+  { color: 'rgba(20,80,180,.50)', title: 'Професионален монтаж', sub: 'точен · чист · завършен' },
 ];
 
 export default function GlassStory() {
@@ -25,10 +25,10 @@ export default function GlassStory() {
           {SLABS.map((slab, i) => (
             <span
               key={i}
-              className="absolute left-1/2 top-1/2 w-[260px] h-[410px] rounded-xl border border-[rgba(63,145,155,.26)] transition-transform duration-800"
+              className="absolute left-1/2 top-1/2 w-[260px] h-[410px] rounded-xl border border-[rgba(46,141,244,.26)] transition-transform duration-800"
               style={{
                 background: slab.bg,
-                boxShadow: '-12px 26px 48px rgba(27,88,96,.08),inset 0 0 40px rgba(255,255,255,.42)',
+                boxShadow: '-12px 26px 48px rgba(2,40,90,.08),inset 0 0 40px rgba(255,255,255,.42)',
                 transformOrigin: 'center',
                 transform: slab.transform,
                 transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)',
@@ -39,7 +39,7 @@ export default function GlassStory() {
             className="absolute left-1/2 bottom-[54px] -translate-x-1/2 w-[430px] h-px"
             style={{
               background: 'linear-gradient(90deg,transparent,var(--glass-strong),transparent)',
-              boxShadow: '0 0 24px rgba(70,181,193,.55)',
+              boxShadow: '0 0 24px rgba(46,141,244,.55)',
             }}
           />
         </div>

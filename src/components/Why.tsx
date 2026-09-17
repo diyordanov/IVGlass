@@ -61,22 +61,22 @@ export default function Why() {
             <article
               key={item.title}
               data-reveal
-              className={`group min-h-[290px] p-7 border border-[rgba(255,255,255,.1)] rounded-3xl relative overflow-hidden transition-all duration-400 hover:-translate-y-[7px] hover:border-[rgba(139,211,219,.33)] max-[560px]:min-h-[230px] ${['', 'delay-1', 'delay-2', 'delay-3'][i]}`}
+              className={`group min-h-[290px] p-7 border border-[rgba(255,255,255,.1)] rounded-3xl relative overflow-hidden transition-all duration-400 hover:-translate-y-[7px] hover:border-[rgba(46,141,244,.33)] max-[560px]:min-h-[230px] ${['', 'delay-1', 'delay-2', 'delay-3'][i]}`}
               style={{
                 background: 'linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025))',
                 transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)',
               }}
             >
               <div
-                className="absolute w-[90px] h-[180px] -right-[35px] -top-[45px] border border-[rgba(170,227,233,.22)] rotate-[24deg] rounded-[7px]"
-                style={{ background: 'rgba(170,227,233,.035)' }}
+                className="absolute w-[90px] h-[180px] -right-[35px] -top-[45px] border border-[rgba(140,190,245,.22)] rotate-[24deg] rounded-[7px]"
+                style={{ background: 'rgba(140,190,245,.035)' }}
               />
               <div
                 className="w-[46px] h-[46px] rounded-[14px] grid place-items-center mb-[68px] max-[560px]:mb-[45px]"
                 style={{
-                  background: 'rgba(147,207,214,.10)',
-                  border: '1px solid rgba(147,207,214,.20)',
-                  color: '#9FD5DB',
+                  background: 'rgba(46,141,244,.10)',
+                  border: '1px solid rgba(46,141,244,.20)',
+                  color: '#82BBF8',
                 }}
               >
                 {item.icon}

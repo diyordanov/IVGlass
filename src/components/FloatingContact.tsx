@@ -37,7 +37,7 @@ export default function FloatingContact() {
           >
             <span
               className="w-9 h-9 rounded-full grid place-items-center flex-shrink-0"
-              style={{ background: 'rgba(121,187,196,.16)', color: 'var(--glass-deep)' }}
+              style={{ background: 'rgba(46,141,244,.16)', color: 'var(--glass-deep)' }}
             >
               <Phone size={17} strokeWidth={2.2} />
             </span>
@@ -52,7 +52,7 @@ export default function FloatingContact() {
           >
             <span
               className="w-9 h-9 rounded-full grid place-items-center flex-shrink-0"
-              style={{ background: 'rgba(121,187,196,.16)', color: 'var(--glass-deep)' }}
+              style={{ background: 'rgba(46,141,244,.16)', color: 'var(--glass-deep)' }}
             >
               <MessageCircle size={17} strokeWidth={2.2} />
             </span>

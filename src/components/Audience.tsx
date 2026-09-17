@@ -36,7 +36,7 @@ export default function Audience() {
             <article
               key={item.title}
               data-reveal
-              className={`p-8 border border-[var(--line)] rounded-3xl relative overflow-hidden transition-all duration-400 min-h-[260px] hover:-translate-y-1.5 hover:shadow-[var(--shadow)] hover:border-[rgba(77,160,170,.22)] ${['', 'delay-1', 'delay-2'][i]}`}
+              className={`p-8 border border-[var(--line)] rounded-3xl relative overflow-hidden transition-all duration-400 min-h-[260px] hover:-translate-y-1.5 hover:shadow-[var(--shadow)] hover:border-[rgba(46,141,244,.22)] ${['', 'delay-1', 'delay-2'][i]}`}
               style={{
                 background: 'rgba(255,255,255,.74)',
                 transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)',
@@ -48,8 +48,8 @@ export default function Audience() {
               <h3 className="h3-display">{item.title}</h3>
               <p className="text-[13px] leading-[1.7] text-[var(--muted)] mb-0">{item.desc}</p>
               <div
-                className="absolute w-[105px] h-[200px] -right-[52px] -top-[45px] border border-[rgba(81,158,168,.18)] rotate-[24deg] rounded-[10px]"
-                style={{ background: 'rgba(178,225,230,.11)' }}
+                className="absolute w-[105px] h-[200px] -right-[52px] -top-[45px] border border-[rgba(46,141,244,.18)] rotate-[24deg] rounded-[10px]"
+                style={{ background: 'rgba(192,221,252,.11)' }}
               />
             </article>
           ))}
