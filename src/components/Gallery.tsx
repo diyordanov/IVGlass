@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { GALLERY_CATEGORIES, GALLERY_IMAGES } from '@/data/gallery';
 
 const PAGE_SIZE = 12;
@@ -7,6 +7,22 @@ export default function Gallery() {
   const [active, setActive] = useState<string>('all');
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const tabsRef = useRef<HTMLDivElement>(null);
+
+  // Desktop mice only scroll vertically — redirect that scroll to the
+  // horizontal tab strip so every category is reachable without a trackpad.
+  useEffect(() => {
+    const el = tabsRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      if (el.scrollWidth <= el.clientWidth) return;
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      e.preventDefault();
+      el.scrollLeft += e.deltaY;
+    };
+    el.addEventListener('wheel', onWheel, { passive: false });
+    return () => el.removeEventListener('wheel', onWheel);
+  }, []);
 
   const filtered = useMemo(
     () => (active === 'all' ? GALLERY_IMAGES : GALLERY_IMAGES.filter((img) => img.category === active)),
@@ -50,7 +66,7 @@ export default function Gallery() {
           className="sticky top-[84px] z-[40] min-[821px]:static bg-[var(--white)] -mx-5 px-5 py-3 mb-6 max-[820px]:border-b max-[820px]:border-[var(--line)]"
           data-reveal
         >
-          <div className="flex flex-nowrap gap-2.5 overflow-x-auto no-scrollbar">
+          <div ref={tabsRef} className="flex flex-nowrap gap-2.5 overflow-x-auto no-scrollbar">
             <button
               onClick={() => selectCategory('all')}
               className={`flex-shrink-0 whitespace-nowrap px-4 py-2.5 rounded-full text-[13px] font-semibold border transition-all duration-300 ${
