@@ -14,7 +14,7 @@ export default function CTA() {
   const [showToast, setShowToast] = useState(false);
   const [sending, setSending] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
@@ -26,20 +26,21 @@ export default function CTA() {
       message: data.get('message'),
     };
 
+    // "no-cors" gives an opaque response we can't read, and awaiting it can hang
+    // indefinitely in some browsers because of the Apps Script redirect — so we
+    // fire the request and confirm optimistically instead of waiting on it.
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
+
     setSending(true);
-    try {
-      await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload),
-      });
-      form.reset();
-    } finally {
-      setSending(false);
-      setShowToast(true);
-      setTimeout(() => setShowToast(false), 3300);
-    }
+    form.reset();
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3300);
+    setTimeout(() => setSending(false), 1200);
   };
 
   return (
