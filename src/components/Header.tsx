@@ -72,22 +72,22 @@ export default function Header() {
           <a
             className="relative flex items-center justify-center transition-all duration-400"
             style={{
-              width: scrolled ? 72 : 150,
+              width: scrolled ? 44 : 138,
               height: 52,
               transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)',
             }}
             href="#home"
-            aria-label="IV Glass начало"
+            aria-label="IV Glass — стъклени изделия по поръчка във Варна, начало"
           >
             <span
-              className="absolute flex items-center gap-2 font-extrabold tracking-[.12em] text-[var(--ink)] text-[17px] transition-all duration-400"
+              className="absolute flex items-center transition-all duration-400"
               style={{
                 opacity: scrolled ? 0 : 1,
                 transform: scrolled ? 'translateY(-8px) scale(.88)' : 'none',
                 transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)',
               }}
             >
-              <span className="text-[var(--glass-deep)] not-italic">IV</span> GLASS
+              <img src="/brand/logo-horizontal.webp" alt="IV Glass" className="h-[30px] w-auto" />
             </span>
             <span
               className="w-[42px] h-[42px] transition-all duration-400"
@@ -98,11 +98,7 @@ export default function Header() {
               }}
               aria-hidden="true"
             >
-              <svg viewBox="0 0 48 48" fill="none" className="w-full h-full">
-                <rect x="1" y="1" width="46" height="46" rx="14" fill="#0D171C" />
-                <path d="M14 13v22" stroke="#BDE4E9" strokeWidth="3.2" strokeLinecap="round" />
-                <path d="M22 13l7 22 7-22" stroke="#fff" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+              <img src="/brand/logo-mark.webp" alt="" className="w-full h-full object-contain" />
             </span>
           </a>
 
