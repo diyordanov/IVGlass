@@ -46,33 +46,38 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-2.5 mb-9" data-reveal>
-          <button
-            onClick={() => selectCategory('all')}
-            className={`px-4 py-2.5 rounded-full text-[13px] font-semibold border transition-all duration-300 ${
-              active === 'all'
-                ? 'bg-[var(--ink)] text-white border-[var(--ink)]'
-                : 'bg-transparent text-[var(--ink)] border-[var(--line)] hover:border-[var(--glass-strong)]'
-            }`}
-          >
-            Всички ({GALLERY_IMAGES.length})
-          </button>
-          {GALLERY_CATEGORIES.map((cat) => {
-            const count = GALLERY_IMAGES.filter((img) => img.category === cat.slug).length;
-            return (
-              <button
-                key={cat.slug}
-                onClick={() => selectCategory(cat.slug)}
-                className={`px-4 py-2.5 rounded-full text-[13px] font-semibold border transition-all duration-300 ${
-                  active === cat.slug
-                    ? 'bg-[var(--ink)] text-white border-[var(--ink)]'
-                    : 'bg-transparent text-[var(--ink)] border-[var(--line)] hover:border-[var(--glass-strong)]'
-                }`}
-              >
-                {cat.label} ({count})
-              </button>
-            );
-          })}
+        <div
+          className="sticky top-[84px] z-[40] min-[821px]:static bg-[var(--white)] -mx-5 px-5 py-3 mb-6 max-[820px]:border-b max-[820px]:border-[var(--line)]"
+          data-reveal
+        >
+          <div className="flex flex-nowrap gap-2.5 overflow-x-auto no-scrollbar">
+            <button
+              onClick={() => selectCategory('all')}
+              className={`flex-shrink-0 whitespace-nowrap px-4 py-2.5 rounded-full text-[13px] font-semibold border transition-all duration-300 ${
+                active === 'all'
+                  ? 'bg-[var(--ink)] text-white border-[var(--ink)]'
+                  : 'bg-transparent text-[var(--ink)] border-[var(--line)] hover:border-[var(--glass-strong)]'
+              }`}
+            >
+              Всички ({GALLERY_IMAGES.length})
+            </button>
+            {GALLERY_CATEGORIES.map((cat) => {
+              const count = GALLERY_IMAGES.filter((img) => img.category === cat.slug).length;
+              return (
+                <button
+                  key={cat.slug}
+                  onClick={() => selectCategory(cat.slug)}
+                  className={`flex-shrink-0 whitespace-nowrap px-4 py-2.5 rounded-full text-[13px] font-semibold border transition-all duration-300 ${
+                    active === cat.slug
+                      ? 'bg-[var(--ink)] text-white border-[var(--ink)]'
+                      : 'bg-transparent text-[var(--ink)] border-[var(--line)] hover:border-[var(--glass-strong)]'
+                  }`}
+                >
+                  {cat.label} ({count})
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         <div className="grid grid-cols-4 gap-4 max-[1040px]:grid-cols-3 max-[700px]:grid-cols-2">

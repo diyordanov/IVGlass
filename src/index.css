@@ -185,6 +185,15 @@
     color: var(--glass-deep);
     text-shadow: 0 6px 30px rgba(67, 154, 165, .18);
   }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Reveal animations — content visible without JS, hidden only when reveal-ready is set */

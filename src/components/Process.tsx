@@ -44,7 +44,7 @@ export default function Process() {
             <br />
             Точен резултат.
           </h2>
-          <p className="lead" data-reveal>
+          <p className="lead mb-7" data-reveal>
             Още преди огледа можем да дадем посока за проекта. Изпратете снимки,
             идея и ориентировъчни размери — ние ще продължим оттам.
           </p>

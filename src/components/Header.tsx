@@ -33,7 +33,7 @@ export default function Header() {
         style={{ transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)' }}
       >
         <div
-          className={`mx-auto grid grid-cols-[1fr_auto_1fr] items-center px-5 transition-all duration-450 border ${
+          className={`mx-auto grid grid-cols-[1fr_auto_1fr] items-center px-5 transition-all duration-450 border max-[820px]:flex max-[820px]:justify-between ${
             scrolled
               ? 'min-h-16 rounded-[18px] bg-[rgba(248,251,252,.88)] border-[rgba(255,255,255,.18)] shadow-[0_14px_38px_rgba(14,33,39,.10)]'
               : 'min-h-[76px] rounded-[22px] bg-[rgba(248,251,252,.72)] border-[rgba(255,255,255,.18)] shadow-[0_12px_38px_rgba(14,33,39,.07)]'
@@ -45,7 +45,7 @@ export default function Header() {
             transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)',
           }}
         >
-          <nav className="flex items-center gap-7" aria-label="Основна навигация ляво">
+          <nav className="flex items-center gap-7 max-[820px]:hidden" aria-label="Основна навигация ляво">
             <a
               className="relative text-[13px] font-semibold text-[#25363C] whitespace-nowrap after:content-[''] after:absolute after:h-px after:left-0 after:-bottom-[7px] after:w-0 after:bg-[var(--glass-deep)] after:transition-all after:duration-300 hover:after:w-full"
               style={{ transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)' }}
@@ -106,7 +106,7 @@ export default function Header() {
             </span>
           </a>
 
-          <nav className="flex items-center justify-end gap-7" aria-label="Основна навигация дясно">
+          <nav className="flex items-center justify-end gap-7 max-[820px]:hidden" aria-label="Основна навигация дясно">
             <a
               className="relative text-[13px] font-semibold text-[#25363C] whitespace-nowrap after:content-[''] after:absolute after:h-px after:left-0 after:-bottom-[7px] after:w-0 after:bg-[var(--glass-deep)] after:transition-all after:duration-300 hover:after:w-full"
               style={{ transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)' }}
