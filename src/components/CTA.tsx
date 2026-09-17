@@ -8,13 +8,38 @@ const PROJECT_TYPES = [
   'Друго',
 ];
 
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxwH6qWaPBljVejGs9iiHgGlJ-Gy-KU1lcoGhFAMnHh5gJsNBoAgd7aCgT_5EXLipQq/exec';
+
 export default function CTA() {
   const [showToast, setShowToast] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3300);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: data.get('name'),
+      phone: data.get('phone'),
+      project: data.get('project'),
+      size: data.get('size'),
+      message: data.get('message'),
+    };
+
+    setSending(true);
+    try {
+      await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+      });
+      form.reset();
+    } finally {
+      setSending(false);
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 3300);
+    }
   };
 
   return (
@@ -24,7 +49,7 @@ export default function CTA() {
           className="rounded-[36px] p-[72px] text-white relative overflow-hidden max-[820px]:p-11 max-[820px]:px-6"
           style={{
             background:
-              'linear-gradient(120deg,rgba(12,28,34,.96),rgba(21,54,62,.89)), url("https://images.pexels.com/photos/23985794/pexels-photo-23985794.jpeg?auto=compress&cs=tinysrgb&w=1800") center/cover',
+              'linear-gradient(120deg,rgba(12,28,34,.96),rgba(21,54,62,.89)), url("/images/plazgashti-dush-kabini-varna/plazgashti-dush-kabini-varna-34.webp") center/cover',
           }}
         >
           <div
@@ -79,6 +104,7 @@ export default function CTA() {
                   </label>
                   <input
                     id="name"
+                    name="name"
                     type="text"
                     placeholder="Вашето име"
                     required
@@ -91,6 +117,7 @@ export default function CTA() {
                   </label>
                   <input
                     id="phone"
+                    name="phone"
                     type="tel"
                     placeholder="+359..."
                     required
@@ -103,6 +130,7 @@ export default function CTA() {
                   </label>
                   <select
                     id="project"
+                    name="project"
                     className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)]"
                   >
                     {PROJECT_TYPES.map((t) => (
@@ -116,6 +144,7 @@ export default function CTA() {
                   </label>
                   <input
                     id="dimensions"
+                    name="size"
                     type="text"
                     placeholder="напр. 120 × 90 × 200 cm"
                     className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)]"
@@ -127,16 +156,17 @@ export default function CTA() {
                   </label>
                   <textarea
                     id="message"
+                    name="message"
                     placeholder="Какво искате да реализирате?"
                     className="w-full border border-[#DDE5E7] bg-white rounded-[13px] px-3.5 py-3.5 outline-none text-[var(--ink)] transition-all focus:border-[var(--glass-strong)] focus:shadow-[0_0_0_4px_rgba(121,187,196,.10)] min-h-[88px] resize-y"
                   />
                 </div>
               </div>
-              <button className="btn btn-primary w-full mt-3.5" type="submit">
-                Изпрати запитване →
+              <button className="btn btn-primary w-full mt-3.5 disabled:opacity-60" type="submit" disabled={sending}>
+                {sending ? 'Изпращане…' : 'Изпрати запитване →'}
               </button>
               <p className="text-center text-[9px] text-[#809095] mt-2.5 m-0">
-                Демо форма за дизайн прототипа · при разработката се свързва с реален имейл / CRM.
+                Запитването постъпва директно при нас — ще се свържем с вас възможно най-скоро.
               </p>
             </form>
           </div>
@@ -154,7 +184,7 @@ export default function CTA() {
           transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)',
         }}
       >
-        Демо: формата ще бъде свързана при разработката на сайта.
+        Благодарим! Запитването е изпратено успешно.
       </div>
     </section>
   );

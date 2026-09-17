@@ -11,10 +11,6 @@ export default function Footer() {
               Интериорни решения от стъкло по индивидуален размер —
               проектиране, доставка и професионален монтаж.
             </p>
-            <div className="mt-[18px] px-3.5 py-3 rounded-xl bg-[var(--mist)] text-[9px] leading-[1.6] text-[#819095]">
-              DESIGN NOTE: добавете реалния телефон, имейл, обслужван регион и социални профили,
-              когато клиентът ги потвърди.
-            </div>
           </div>
 
           <div>
@@ -35,8 +31,12 @@ export default function Footer() {
 
           <div>
             <h4 className="text-[11px] uppercase tracking-[.13em] my-1 mb-[18px] text-[var(--ink)]">Контакт</h4>
-            <span className="block text-[12px] text-[var(--muted)] my-3">Телефон: предстои</span>
-            <span className="block text-[12px] text-[var(--muted)] my-3">Email: предстои</span>
+            <a href="tel:+359899558192" className="block text-[12px] text-[var(--muted)] my-3 hover:text-[var(--glass-deep)]">
+              Телефон: 089 955 8192
+            </a>
+            <a href="mailto:iv.glass.varna@gmail.com" className="block text-[12px] text-[var(--muted)] my-3 hover:text-[var(--glass-deep)]">
+              Email: iv.glass.varna@gmail.com
+            </a>
             <span className="block text-[12px] text-[var(--muted)] my-3">Facebook · IV Glass</span>
           </div>
         </div>

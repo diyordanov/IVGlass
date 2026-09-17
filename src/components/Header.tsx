@@ -4,6 +4,7 @@ import { useScrolled } from '@/hooks/useInteractions';
 const navLinks = [
   { href: '#home', label: 'Начало' },
   { href: '#services', label: 'Услуги' },
+  { href: '#gallery', label: 'Галерия' },
   { href: '#showers', label: 'Душ кабини и прегради' },
   { href: '#about', label: 'За нас' },
   { href: '#contact', label: 'Контакти' },
@@ -58,6 +59,13 @@ export default function Header() {
               href="#services"
             >
               Услуги
+            </a>
+            <a
+              className="relative text-[13px] font-semibold text-[#25363C] whitespace-nowrap after:content-[''] after:absolute after:h-px after:left-0 after:-bottom-[7px] after:w-0 after:bg-[var(--glass-deep)] after:transition-all after:duration-300 hover:after:w-full"
+              style={{ transitionTimingFunction: 'cubic-bezier(.2,.8,.2,1)' }}
+              href="#gallery"
+            >
+              Галерия
             </a>
           </nav>
 

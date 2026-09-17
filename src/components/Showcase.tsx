@@ -74,7 +74,7 @@ const OPTIONS: GlassOption[] = [
   },
 ];
 
-const SHOWCASE_IMG = 'https://images.pexels.com/photos/7061416/pexels-photo-7061416.jpeg?auto=compress&cs=tinysrgb&w=1500';
+const SHOWCASE_IMG = '/images/dush-kabini-harmonika-varna/dush-kabini-harmonika-varna-16.webp';
 
 export default function Showcase() {
   const [active, setActive] = useState(0);

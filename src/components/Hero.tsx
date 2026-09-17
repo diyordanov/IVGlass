@@ -1,6 +1,6 @@
 import { useParallax } from '@/hooks/useInteractions';
 
-const HERO_IMG = 'https://images.pexels.com/photos/6436802/pexels-photo-6436802.jpeg?auto=compress&cs=tinysrgb&w=1600';
+const HERO_IMG = '/images/dush-pregradi-135-gradusa-varna/dush-pregradi-135-gradusa-varna-02.webp';
 
 export default function Hero() {
   const { ref, targetRef } = useParallax();

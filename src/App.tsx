@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
 import Services from '@/components/Services';
+import Gallery from '@/components/Gallery';
 import ShowerTypes from '@/components/ShowerTypes';
 import Showcase from '@/components/Showcase';
 import GlassStory from '@/components/GlassStory';
@@ -13,6 +14,7 @@ import Audience from '@/components/Audience';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import FloatingContact from '@/components/FloatingContact';
 
 function App() {
   useScrollReveal();
@@ -37,6 +39,7 @@ function App() {
         <Hero />
         <Marquee />
         <Services />
+        <Gallery />
         <ShowerTypes />
         <Showcase />
         <GlassStory />
@@ -49,6 +52,7 @@ function App() {
       </main>
 
       <Footer />
+      <FloatingContact />
     </>
   );
 }

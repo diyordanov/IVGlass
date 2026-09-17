@@ -71,9 +71,7 @@ export default function ShowerTypes() {
           <div>
             <div className="eyebrow" data-reveal>КОНФИГУРАЦИИ</div>
             <h2 id="showerTypesTitle" className="h2-display" data-reveal>
-              Вашата баня определя формата.
-              <br />
-              Не каталогът.
+              Вашата баня определя формата. Не каталогът.
             </h2>
           </div>
           <p className="lead" data-reveal>

@@ -161,12 +161,16 @@
   }
 
   .h2-display {
-    font-size: clamp(36px, 4.3vw, 64px);
-    line-height: 1.02;
-    letter-spacing: -.045em;
+    font-size: clamp(28px, 3.2vw, 46px);
+    line-height: 1.15;
+    letter-spacing: -.03em;
     color: var(--ink);
     font-weight: 650;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
+  }
+
+  .h2-display.text-white {
+    color: #fff;
   }
 
   .h3-display {
@@ -178,9 +182,8 @@
 
   .stroke-text {
     display: block;
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(46, 127, 139, .62);
-    text-shadow: 0 6px 30px rgba(67, 154, 165, .08);
+    color: var(--glass-deep);
+    text-shadow: 0 6px 30px rgba(67, 154, 165, .18);
   }
 }
 

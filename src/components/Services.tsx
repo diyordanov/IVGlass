@@ -17,7 +17,7 @@ function ServiceCard({ img, num, title, desc, href, delay }: ServiceCardProps) {
       ref={tiltRef}
       href={href}
       data-reveal
-      className={`relative min-h-[430px] rounded-[28px] overflow-hidden text-white isolate ${delay ?? ''}`}
+      className={`block relative min-h-[430px] rounded-[28px] overflow-hidden text-white isolate ${delay ?? ''}`}
       style={{ transformStyle: 'preserve-3d' }}
     >
       <img
@@ -62,7 +62,7 @@ function ServiceCard({ img, num, title, desc, href, delay }: ServiceCardProps) {
 
 const SERVICES = [
   {
-    img: 'https://images.pexels.com/photos/6758533/pexels-photo-6758533.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    img: '/images/plazgashti-dush-kabini-varna/plazgashti-dush-kabini-varna-28.webp',
     num: '01',
     title: 'Душ кабини и паравани',
     desc: 'Walk-in, статични, с врата, плъзгащи и нестандартни конфигурации по мярка.',
@@ -70,7 +70,7 @@ const SERVICES = [
     span: 'lg:col-span-6 col-span-12',
   },
   {
-    img: 'https://images.pexels.com/photos/35699360/pexels-photo-35699360.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    img: '/images/parapeti-lineen-profil-varna/parapeti-lineen-profil-varna-04.webp',
     num: '02',
     title: 'Стъклени парапети',
     desc: 'Светлина, безопасност и чисти линии за стълбища, тераси и модерни интериори.',
@@ -79,7 +79,7 @@ const SERVICES = [
     delay: 'delay-1',
   },
   {
-    img: 'https://images.pexels.com/photos/5483051/pexels-photo-5483051.jpeg?auto=compress&cs=tinysrgb&w=1000',
+    img: '/images/interiorni-stkleni-pregradi-varna/interiorni-stkleni-pregradi-varna-04.webp',
     num: '03',
     title: 'Интериорни прегради',
     desc: 'За офиси, търговски обекти и пространства, в които светлината трябва да остане.',
@@ -87,7 +87,7 @@ const SERVICES = [
     span: 'lg:col-span-4 col-span-12',
   },
   {
-    img: 'https://images.pexels.com/photos/6523301/pexels-photo-6523301.jpeg?auto=compress&cs=tinysrgb&w=1400',
+    img: '/images/steklenni-vrati-varna/steklenni-vrati-varna-08.webp',
     num: '04',
     title: 'Стъклени врати и панели',
     desc: 'Индивидуални решения, които се адаптират към архитектурата — не обратното.',
