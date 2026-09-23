@@ -1,9 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { PROJECTS } from '@/data/projects';
+import { useCmsProjects } from '@/hooks/useCms';
 
 export default function Projects() {
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
-  const active = PROJECTS.find((p) => p.slug === activeSlug) ?? null;
+  const cmsProjects = useCmsProjects();
+  const allProjects = useMemo(
+    () => [
+      ...PROJECTS,
+      ...cmsProjects.map((p) => ({
+        slug: p.slug,
+        title: p.title,
+        subtitle: p.subtitle,
+        excerpt: p.excerpt,
+        description: p.description,
+        categorySlug: p.category_slug,
+        images: p.images,
+      })),
+    ].filter((p) => p.images.length > 0),
+    [cmsProjects]
+  );
+  const active = allProjects.find((p) => p.slug === activeSlug) ?? null;
 
   useEffect(() => {
     if (!active) return;
@@ -36,7 +53,7 @@ export default function Projects() {
         </div>
 
         <div className="grid grid-cols-3 gap-[18px] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1">
-          {PROJECTS.map((p, i) => (
+          {allProjects.map((p, i) => (
             <button
               key={p.slug}
               onClick={() => setActiveSlug(p.slug)}

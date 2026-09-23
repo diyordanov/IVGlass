@@ -1,4 +1,12 @@
 import { useState } from 'react';
+import { useCmsContent } from '@/hooks/useCms';
+
+const DEFAULT_CTA = {
+  eyebrow: 'ЗАПОЧНЕТЕ ОТ ТУК',
+  titleLine1: 'Имате място.',
+  titleLine2: 'Ние ще намерим правилната линия.',
+  lead: 'Изпратете ни идея, снимка и ориентировъчни размери. Ще обсъдим подходящото решение и следващата стъпка.',
+};
 
 const PROJECT_TYPES = [
   'Душ кабина / параван',
@@ -13,6 +21,7 @@ const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxwH6qWaPBljVejGs
 export default function CTA() {
   const [showToast, setShowToast] = useState(false);
   const [sending, setSending] = useState(false);
+  const c = useCmsContent('cta', DEFAULT_CTA);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -60,15 +69,14 @@ export default function CTA() {
 
           <div className="grid grid-cols-[.85fr_1.15fr] gap-[74px] items-start relative z-[2] max-[820px]:grid-cols-1">
             <div data-reveal>
-              <div className="eyebrow text-[#82BBF8]">ЗАПОЧНЕТЕ ОТ ТУК</div>
+              <div className="eyebrow text-[#82BBF8]">{c.eyebrow}</div>
               <h2 className="h2-display text-white">
-                Имате място.
+                {c.titleLine1}
                 <br />
-                Ние ще намерим правилната линия.
+                {c.titleLine2}
               </h2>
               <p className="lead text-[rgba(255,255,255,.62)]">
-                Изпратете ни идея, снимка и ориентировъчни размери.
-                Ще обсъдим подходящото решение и следващата стъпка.
+                {c.lead}
               </p>
               <div className="flex flex-wrap gap-2.5 mt-7">
                 {['Снимки на помещението', 'Ориентировъчни размери', 'Желан тип стъкло'].map((point) => (

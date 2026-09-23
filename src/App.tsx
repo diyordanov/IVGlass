@@ -1,4 +1,5 @@
 import { useScrollReveal, useScrollProgress } from '@/hooks/useInteractions';
+import { useTheme } from '@/hooks/useTheme';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
@@ -18,6 +19,7 @@ import FloatingContact from '@/components/FloatingContact';
 
 function App() {
   useScrollReveal();
+  useTheme();
   const progress = useScrollProgress();
 
   return (

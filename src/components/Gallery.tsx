@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { GALLERY_CATEGORIES, GALLERY_IMAGES } from '@/data/gallery';
+import { useCmsGallery } from '@/hooks/useCms';
 
 const PAGE_SIZE = 12;
 
@@ -8,6 +9,13 @@ export default function Gallery() {
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
+  const cms = useCmsGallery();
+
+  const allImages = useMemo(() => [...GALLERY_IMAGES, ...cms.images], [cms.images]);
+  const allCategories = useMemo(() => {
+    const extra = cms.categories.filter((c) => !GALLERY_CATEGORIES.some((g) => g.slug === c.slug));
+    return [...GALLERY_CATEGORIES, ...extra];
+  }, [cms.categories]);
 
   // Desktop mice only scroll vertically — redirect that scroll to the
   // horizontal tab strip so every category is reachable without a trackpad.
@@ -25,8 +33,8 @@ export default function Gallery() {
   }, []);
 
   const filtered = useMemo(
-    () => (active === 'all' ? GALLERY_IMAGES : GALLERY_IMAGES.filter((img) => img.category === active)),
-    [active]
+    () => (active === 'all' ? allImages : allImages.filter((img) => img.category === active)),
+    [active, allImages]
   );
 
   const shown = filtered.slice(0, visible);
@@ -75,10 +83,10 @@ export default function Gallery() {
                   : 'bg-transparent text-[var(--ink)] border-[var(--line)] hover:border-[var(--glass-strong)]'
               }`}
             >
-              Всички ({GALLERY_IMAGES.length})
+              Всички ({allImages.length})
             </button>
-            {GALLERY_CATEGORIES.map((cat) => {
-              const count = GALLERY_IMAGES.filter((img) => img.category === cat.slug).length;
+            {allCategories.map((cat) => {
+              const count = allImages.filter((img) => img.category === cat.slug).length;
               return (
                 <button
                   key={cat.slug}

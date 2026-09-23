@@ -1,9 +1,21 @@
 import { useParallax } from '@/hooks/useInteractions';
+import { useCmsContent } from '@/hooks/useCms';
 
-const HERO_IMG = '/images/dush-pregradi-135-gradusa-varna/dush-pregradi-135-gradusa-varna-02.webp';
+const DEFAULT_HERO = {
+  eyebrow: 'IV GLASS · СТЪКЛО ПО МЯРКА',
+  titleLine1: 'Пространство',
+  titleLine2: 'без граници.',
+  lead: 'Проектираме, доставяме и монтираме душ кабини, стъклени прегради, парапети и интериорни решения по индивидуален размер — за дома, търговския обект и корпоративното пространство.',
+  primaryBtn: 'Искам предварителна оферта',
+  secondaryBtn: 'Разгледай душ решенията',
+  image: '/images/dush-pregradi-135-gradusa-varna/dush-pregradi-135-gradusa-varna-02.webp',
+  badgeTitle: 'По ваш размер.',
+  badgeSub: 'До последния mm',
+};
 
 export default function Hero() {
   const { ref, targetRef } = useParallax();
+  const c = useCmsContent('hero', DEFAULT_HERO);
 
   return (
     <section
@@ -28,27 +40,25 @@ export default function Hero() {
       <div className="container grid grid-cols-[.92fr_1.08fr] gap-[74px] items-center max-[1040px]:grid-cols-2 max-[1040px]:gap-[34px] max-[820px]:grid-cols-1">
         <div className="relative z-[3] max-[820px]:pt-5">
           <div className="eyebrow" data-reveal>
-            IV GLASS · СТЪКЛО ПО МЯРКА
+            {c.eyebrow}
           </div>
           <h1 className="h1-display delay-1" data-reveal>
-            Пространство
+            {c.titleLine1}
             <br />
-            <span className="stroke-text">без граници.</span>
+            <span className="stroke-text">{c.titleLine2}</span>
           </h1>
           <p className="lead delay-2 max-w-[610px] mb-9" data-reveal>
-            Проектираме, доставяме и монтираме душ кабини, стъклени прегради,
-            парапети и интериорни решения по индивидуален размер — за дома,
-            търговския обект и корпоративното пространство.
+            {c.lead}
           </p>
           <div className="flex gap-3.5 flex-wrap" data-reveal>
             <a href="#contact" className="btn btn-primary">
-              Искам предварителна оферта
+              {c.primaryBtn}
               <svg viewBox="0 0 24 24" fill="none" className="w-[18px] h-[18px]">
                 <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
             <a href="#showers" className="btn btn-ghost">
-              Разгледай душ решенията
+              {c.secondaryBtn}
             </a>
           </div>
 
@@ -93,7 +103,7 @@ export default function Hero() {
             }}
           >
             <img
-              src={HERO_IMG}
+              src={c.image}
               alt="Модерна баня със стъклена душ кабина"
               className="w-full h-full object-cover object-center"
             />
@@ -147,10 +157,10 @@ export default function Hero() {
           >
             <div>
               <strong className="block text-[18px] leading-[1.05] text-[var(--ink)] max-[560px]:text-[14px]">
-                По ваш размер.
+                {c.badgeTitle}
               </strong>
               <small className="block text-[10px] tracking-[.14em] uppercase mt-2 text-[var(--glass-deep)] font-extrabold">
-                До последния mm
+                {c.badgeSub}
               </small>
             </div>
           </div>
